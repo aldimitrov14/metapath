@@ -8,5 +8,5 @@ entity Entity_TravelPaths : cuid, managed, validity {
     final_latitude : Double;
     final_longitude : Double;
     travel_type : String(3);
-    routes : Association to many Entity_Routes;
+    routes : Association to Entity_Routes;
 }
