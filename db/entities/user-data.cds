@@ -1,0 +1,1 @@
+using { cuid, managed, Language, sap.common.CodeList } from '@sap/cds/common';
