@@ -5,5 +5,5 @@ entity Entity_CompletedRoutes: cuid, managed {
 
     time_spent: Time;
     completion_date: Date;
-    routes: Association to many Entity_Routes on routes.completed_routes = $self;
+    routes: Association to Entity_Routes;
 }

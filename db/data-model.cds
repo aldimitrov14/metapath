@@ -5,6 +5,8 @@ using { Entity_Routes } from './entities/routes';
 using { Entity_CompletedRoutes } from './entities/completed-routes';
 using { Entity_UserData } from './entities/user-data';
 
+namespace com.metapath.database;
+
 entity Routes as select from Entity_Routes;
 entity BuildingAdvertisements as select from Entity_BuildingAdvertisements;
 entity Advertisements as select from Entity_Advertisements;
