@@ -1,0 +1,24 @@
+<mvc:View controllerName="mp.userdataapp.controller.UserData"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	height="100%">
+	<Page
+		id="page"
+		showHeader="true" >
+		<customHeader>
+			<Bar>
+				<contentRight>
+					<Button id="edit" text="Edit" press="handleEdit" visible="{=!${displayModel>/edit_mode}}" />
+					<Button id="save" text="Save" type="Emphasized" visible="{=${displayModel>/edit_mode}}" press="handleSave" />
+					<Button id="cancel" text="Cancel" visible="{=${displayModel>/edit_mode}}" press="handleCancel" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+
+		<core:Fragment fragmentName="mp.userdataapp.view.fragments.Display" type="XML"/>
+		<core:Fragment fragmentName="mp.userdataapp.view.fragments.Edit" type="XML"/>
+	</Page>
+</mvc:View>
