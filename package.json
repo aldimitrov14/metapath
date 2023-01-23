@@ -7,9 +7,13 @@
   "private": true,
   "dependencies": {
     "@sap/cds": ">=5",
-    "express": "^4"
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.16",
+    "express": "^4",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.102.14",
+    "eslint": "^8.32.0",
     "sqlite3": "^5.0.4"
   },
   "scripts": {

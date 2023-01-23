@@ -1,0 +1,76 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	height="100%">
+	<VBox class="sapUiSmallMargin" visible="{=!${displayModel>/edit_mode}}">
+		<f:Form editable="true">
+			<f:title>
+				<core:Title text="User Data" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="4"
+										labelSpanL="4"
+										labelSpanM="12"
+						 				labelSpanS="12"
+										adjustLabelSpan="false"
+										emptySpanXL="0"
+										emptySpanL="0"
+										emptySpanM="0"
+										emptySpanS="0"
+										columnsXL="3"
+										columnsL="3"
+										columnsM="1"
+										singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="Basic Data">
+					<f:formElements>
+						<f:FormElement label='First Name'>
+							<f:fields>
+								<Text text="{displayModel>/first_name}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label='Last Name'>
+							<f:fields>
+								<Text text="{displayModel>/last_name}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label='Telephone'>
+							<f:fields>
+								<Text text="{displayModel>/telephone}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Premium">
+							<f:fields>
+								<Text text='{= ${displayModel>/premium} ? Yes : No }'/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:FormContainer title="Technical Data">
+					<f:formElements>
+						<f:FormElement label="Changed At">
+							<f:fields>
+							<Text text="{
+								path: 'displayModel>/changed_by',
+								type: 'sap.ui.model.type.DateTime',
+								formatOptions: {
+									style: 'long'
+								}}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Changed By">
+							<f:fields>
+								<Text text='{displayModel>/changed_by}'/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:FragmentDefinition>
