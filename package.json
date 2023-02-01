@@ -12,7 +12,8 @@
     "express": "^4",
     "hdb": "^0.19.0",
     "lodash": "^4.17.21",
-    "passport": "^0"
+    "passport": "^0",
+    "sqlite": "^4.1.2"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.102.14",
@@ -21,10 +22,10 @@
     "sqlite3": "^5.1.4"
   },
   "scripts": {
-    "start": "cds run",
+    "start": "cds watch --profile hybrid",
     "undeploy": "cf undeploy metapath --delete-services --delete-service-keys --delete-service-brokers",
-    "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    "build": "rimraf resources mta_archives && mbt build -t mta_archives --mode=verbose",
+    "deploy": "cf deploy mta_archives/metapath_1.0.0.mtar --retries 1"
   },
   "engines": {
     "node": "^16.15"
@@ -57,11 +58,29 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "hana-cloud"
+        "kind": "sql",
+        "credentials": {
+          "database": "local/metapath.db"
+        }
       },
       "uaa": {
         "kind": "xsuaa",
         "credentials": {}
+      },
+      "[hybrid]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "alice": { 
+              "password": "alice", 
+              "roles": [ "User" ]
+            },
+            "bob": {
+              "password": "bob",
+              "roles": [ "Admin" ]
+            }
+        }
+      }
       }
     },
     "hana": {
