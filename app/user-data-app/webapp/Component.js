@@ -32,6 +32,8 @@ sap.ui.define([
                     telephone: null,
                     premium: null,
                     edit_mode: false,
+                    changed_at: null,
+                    changed_by: null,
                 })
             }
         });
