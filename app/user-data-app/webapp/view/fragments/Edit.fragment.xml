@@ -52,19 +52,19 @@
 				</f:FormContainer>
 				<f:FormContainer title="Technical Data">
 					<f:formElements>
+						<f:FormElement label="Username">
+							<f:fields>
+								<Text text='{displayModel>/changed_by}'/>
+							</f:fields>
+						</f:FormElement>
 						<f:FormElement label="Changed At">
 							<f:fields>
 							<Text text="{
-								path: 'displayModel>/changed_by',
+								path: 'displayModel>/changed_at',
 								type: 'sap.ui.model.type.DateTime',
 								formatOptions: {
-									style: 'long'
+									style: 'medium'
 								}}" />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Changed By">
-							<f:fields>
-								<Text text='{displayModel>/changed_by}'/>
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>

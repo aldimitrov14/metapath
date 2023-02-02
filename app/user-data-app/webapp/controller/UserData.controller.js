@@ -23,7 +23,9 @@ sap.ui.define([
                 this.displayModel.setProperty("/first_name", data?.first_name);
                 this.displayModel.setProperty("/last_name", data?.last_name);
                 this.displayModel.setProperty("/telephone", data?.telephone);   
-                this.displayModel.setProperty("/premium", data?.premium);  
+                this.displayModel.setProperty("/premium", data?.premium);
+                this.displayModel.setProperty("/changed_by", data?.modifiedBy);  
+                this.displayModel.setProperty("/changed_at", data?.modifiedAt); 
             },
 
             handleEdit: function(){
@@ -31,10 +33,7 @@ sap.ui.define([
             },
 
             handleCancel: function(){
-                this.displayModel.setProperty("/edit_mode", false); 
-                this.byId("first_name").setValue("");
-                this.byId("last_name").setValue("");
-                this.byId("telephone").setValue("");
+                this.displayModel.setProperty("/edit_mode", false);
             },
 
             handleSave: async function(){
