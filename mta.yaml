@@ -68,6 +68,10 @@ modules:
             - mpuserdataapp.zip
           name: mpuserdataapp
           target-path: resources/
+        - artifacts:
+            - mpmyadvertisementsapp.zip
+          name: mpmyadvertisementsapp
+          target-path: resources/
   - name: mpuserdataapp
     type: html5
     path: app/user-data-app
@@ -77,6 +81,16 @@ modules:
       commands:
         - npm install
         - npm run build:cf
+      supported-platforms: []
+  - name: mpmyadvertisementsapp
+    type: html5
+    path: app/my-advertisements-app
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+      - npm install
+      - npm run build:cf
       supported-platforms: []
 
   - name: metapath-db-deployer
