@@ -11,9 +11,9 @@
 		<customHeader>
 			<Bar>
 				<contentRight>
-					<Button id="edit" text="Edit" press="handleEdit" visible="{=!${displayModel>/edit_mode}}" />
-					<Button id="save" text="Save" type="Emphasized" visible="{=${displayModel>/edit_mode}}" press="handleSave" />
-					<Button id="cancel" text="Cancel" visible="{=${displayModel>/edit_mode}}" press="handleCancel" />
+					<Button id="edit" text="{i18n>edit}" press="handleEdit" visible="{=!${displayModel>/edit_mode}}" />
+					<Button id="save" text="{i18n>save}" type="Emphasized" visible="{=${displayModel>/edit_mode}}" press="handleSave" />
+					<Button id="cancel" text="{i18n>cancel}" visible="{=${displayModel>/edit_mode}}" press="handleCancel" />
 				</contentRight>
 			</Bar>
 		</customHeader>

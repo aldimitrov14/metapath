@@ -8,7 +8,7 @@
 	<VBox class="sapUiSmallMargin" visible="{=${displayModel>/edit_mode}}">
 		<f:Form editable="true">
 			<f:title>
-				<core:Title text="User Data" />
+				<core:Title text="{i18n>user_data}" />
 			</f:title>
 			<f:layout>
 				<f:ResponsiveGridLayout labelSpanXL="4"
@@ -26,38 +26,38 @@
 										singleContainerFullSize="false" />
 			</f:layout>
 			<f:formContainers>
-				<f:FormContainer title="Basic Data">
+				<f:FormContainer title="{i18n>basic_data}">
 					<f:formElements>
-						<f:FormElement label='First Name'>
+						<f:FormElement label='{i18n>first_name}'>
 							<f:fields>
 								<Input id='first_name' value="{displayModel>/first_name}"/>
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label='Last Name'>
+						<f:FormElement label='{i18n>last_name}'>
 							<f:fields>
 								<Input id='last_name' value="{displayModel>/last_name}"/>
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label='Telephone'>
+						<f:FormElement label='{i18n>telephone}'>
 							<f:fields>
 								<Input id='telephone' value="{displayModel>/telephone}"/>
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="Premium">
+						<f:FormElement label="{i18n>premium}">
 							<f:fields>
 								<Text text='{= ${displayModel>/premium} ? Yes : No }'/>
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>
 				</f:FormContainer>
-				<f:FormContainer title="Technical Data">
+				<f:FormContainer title="{i18n>technical_data}">
 					<f:formElements>
-						<f:FormElement label="Username">
+						<f:FormElement label="{i18n>username}">
 							<f:fields>
 								<Text text='{displayModel>/changed_by}'/>
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="Changed At">
+						<f:FormElement label="{i18n>changed_at}">
 							<f:fields>
 							<Text text="{
 								path: 'displayModel>/changed_at',

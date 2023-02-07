@@ -129,7 +129,8 @@
                     "options": {
                         "settings": {
                             "entitySet": "Advertisements",
-                            "variantManagement": "Page",
+                            "variantManagement": "None",
+                            "initialLoad": "Enabled",
                             "navigation": {
                                 "Advertisements": {
                                     "detail": {
